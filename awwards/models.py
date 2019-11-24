@@ -38,7 +38,7 @@ class Profile(models.Model):
 
     @classmethod
     def filter_by_id(cls, id):
-        profile = Profile.objects.filter(user = id).first()
+        profile = Profile.objects.filter(user=id).first()
         return profile
 
         return profile
@@ -59,18 +59,18 @@ class Project(models.Model):
     profile = models.ForeignKey(Profile, null=True, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    def avg_design(self):
-        design_reviews = list(map(lambda x: x.design, self.review_set.all()))
-        return np.mean(design_reviews)
+    # def avg_design(self):
+    #     design_reviews = list(map(lambda x: x.design, self.review_set.all()))
+    #     return np.mean(design_reviews)
 
-    def avg_content(self):
-        content_reviews = list(map(lambda x: x.content, self.review_set.all()))
-        return np.mean(content_reviews)
+    # def avg_content(self):
+    #     content_reviews = list(map(lambda x: x.content, self.review_set.all()))
+    #     return np.mean(content_reviews)
 
-    def avg_usability(self):
-        usability_reviews = list(
-            map(lambda x: x.usability, self.review_set.all()))
-        return np.mean(usability_reviews)
+    # def avg_usability(self):
+    #     usability_reviews = list(
+    #         map(lambda x: x.usability, self.review_set.all()))
+    #     return np.mean(usability_reviews)
 
     def __str__(self):
         return self.title
@@ -89,6 +89,16 @@ class Project(models.Model):
     @classmethod
     def get_projects(cls):
         projects = Project.objects.all()
+        return projects
+
+    @classmethod
+    def get_profile_pic(cls, profile):
+        projects = Project.objects.filter(profile__pk=profile)
+        return projects
+
+    @classmethod
+    def search_by_title(cls, search_term):
+        projects = cls.objects.filter(title__icontains=search_term)
         return projects
 
     class Meta:
