@@ -1,5 +1,5 @@
 from django import forms
-from aww.models import *
+from awwards.models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 # sign up forms

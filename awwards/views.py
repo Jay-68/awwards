@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
-from aww.models import *
-from aww.forms import *
+from awwards.models import *
+from awwards.forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from rest_framework.response import Response
