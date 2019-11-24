@@ -81,3 +81,40 @@ class Project(models.Model):
 
     class Meta:
         ordering = ['-timestamp']
+
+
+class Review(models.Model):
+    REVIEW_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    )
+
+    design = models.IntegerField(
+        choices=REVIEW_CHOICES, default=0, blank=False)
+    usability = models.IntegerField(
+        choices=REVIEW_CHOICES, default=0, blank=False)
+    content = models.IntegerField(
+        choices=REVIEW_CHOICES, default=0, blank=False)
+    average = models.DecimalField(
+        default=1, blank=False, decimal_places=2, max_digits=40)
+    project = models.ForeignKey(Project, null=True, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, null=True, blank=True)
+
+    def __str__(self):
+        return self.user
+
+    # saving and deleteing the choices
+    def save_review(self):
+        self.save()
+
+    def delete_review(self):
+        self.delete()
