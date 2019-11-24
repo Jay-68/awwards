@@ -22,7 +22,7 @@ from django.core.urlresolvers import reverse_lazy
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('awwards.urls')),
-    url(r'^emoji/', include('emoji.urls')),
+    # url(r'^emoji/', include('emoji.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
