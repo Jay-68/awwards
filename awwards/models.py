@@ -38,7 +38,7 @@ class Profile(models.Model):
         return profile
 
 
-class Project(models.model):
+class Project(models.Model):
     title = models.CharField(max_length=80)
     image = models.ImageField(upload_to='project_pictures/')
     description = HTMLField()
