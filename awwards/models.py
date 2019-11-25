@@ -59,19 +59,6 @@ class Project(models.Model):
     profile = models.ForeignKey(Profile, null=True, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    # def avg_design(self):
-    #     design_reviews = list(map(lambda x: x.design, self.review_set.all()))
-    #     return np.mean(design_reviews)
-
-    # def avg_content(self):
-    #     content_reviews = list(map(lambda x: x.content, self.review_set.all()))
-    #     return np.mean(content_reviews)
-
-    # def avg_usability(self):
-    #     usability_reviews = list(
-    #         map(lambda x: x.usability, self.review_set.all()))
-    #     return np.mean(usability_reviews)
-
     def __str__(self):
         return self.title
 

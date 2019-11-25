@@ -15,10 +15,10 @@ urlpatterns = [
         views.project_details, name='projectdetails'),
 
     # API VIEWS
-    url(r'^api/project/$', views.ProjectList.as_view()),
+    url(r'^api/project/$', views.ProjectList.as_view(),name='project_api'),
     url(r'api/project/project-id/(?P<pk>[0-9]+)/$',
         views.ProjectDescription.as_view()),
-    url(r'^api/profile/$', views.ProfileList.as_view()),
+    url(r'^api/profile/$', views.ProfileList.as_view(),name='profile_api'),
     url(r'api/profile/profile-id/(?P<pk>[0-9]+)/$',
         views.ProfileDescription.as_view()),
 

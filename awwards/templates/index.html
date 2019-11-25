@@ -3,58 +3,7 @@
 {% load bootstrap4 %}
 
 {% block content %}
-<!-- <style>
-  .i-images {
-    width: 100%;
-    height: 200px;
-    margin: 2%;
-    border-radius: 1.2%;
-    border: 4px double grey;
-  }
-
-  * {
-    font-family: 'Crimson Text', serif;
-    font-size: 20px;
-  }
-
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    right: 100%;
-    /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); */
-    background: whitesmoke;
-    opacity: 0.7;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    transition: .4s ease;
-  }
-
-  */ .text {
-    white-space: nowrap;
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    overflow: hidden;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-  }
-
-  .details {
-    white-space: nowrap;
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    overflow: hidden;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-  }
-</style> -->
+{% include 'navbar.html' %}
 <!-- {{message}} -->
 <div class="projects">
   <div class="container">
@@ -71,7 +20,7 @@
                   <div class="details" style="text-align: center;">
                     <div class="text-center font-weight-bold pt-2">
                       {{project.title}}</div>
-                    <a href="{% url 'projectdetails' id=project.id %}" class="btn btn-outline-info btn-sm mt-2">View Project</a><br>
+                    <a href="{% url 'projectdetails' id=project.id %}" class="btn btn-outline-info btn-sm mt-2">Project Details</a><br>
                   </div>
                 </div>
               </div>

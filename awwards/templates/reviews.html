@@ -26,7 +26,7 @@
 
         {% for p in project %}
         <form action="{%url 'review' p.id %}" method="POST" enctype="multipart/form-data">
-          <h2 class="text-center">RATE IT HERE&#128071</h2>
+          <h2 class="text-center">Enter Ratings:</h2>
           {%csrf_token%}
 
           {% bootstrap_form form %}
