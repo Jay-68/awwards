@@ -21,18 +21,17 @@
 
     {% for project in found_projects%}
     <div class="col-md-4">
-      <div class="card" style="height:500px;margin-bottom:10px;margin-top:50px;">
+      <div class="card">
         <div class="card-body">
           <p style="text-align:center;">{{project.title}}</p>
           <a href="{% url 'projectdetails' id=project.id %}">
             <img class="card-img-top mb-10" src="{{project.image.url}}" style="height:260px;width:100%;">
           </a>
-          <a href="{% url 'review' project_id=project.id%}" class="btn btn-info btn-block"
-            style="margin-top:4px;border-radius:20%;">Rate</a>
+          <a href="{% url 'review' project_id=project.id%}" class="btn btn-info btn-block">Rate</a>
         </div>
         <div class="card-body">
           <div class="card-text">
-            <p style="margin-top:-60px;">{{project.description | safe}} </p>
+            <p>{{project.description | safe}} </p>
           </div>
         </div>
       </div>

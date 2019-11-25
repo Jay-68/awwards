@@ -5,7 +5,7 @@
   {% for review in latest_review_list %}
   <div>
     <h4><a href="{% url 'reviews:review_detail' review.id %}">
-        {{ review.prject.title }}
+        {{ review.project.title }}
       </a></h4>
     <h6>rated {{ review.design }} of 10 by {{ review.user }}</h6>
     <h6>rated {{ review.usability }} of 10 by {{ review.user }}</h6>
