@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block content %}
 
-<div class="container" style="margin-top:80px; background-color:  rgba(231, 163, 99, 0.637)">
+<div class="container">
 
   <div class="row">
     <div class="col-md-2"></div>
@@ -17,7 +17,7 @@
             {% csrf_token %}
             {% bootstrap_form form %}
             <div class="form-group">
-              <input type="submit" class="btn btn-info btn-outline" value="Update">
+              <input type="submit" class="btn btn-info btn-sm" value="Update">
             </div>
 
           </form>

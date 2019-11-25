@@ -56,39 +56,30 @@
   }
 </style> -->
 <!-- {{message}} -->
-<div class="projects" style="margin-top:120px;">
+<div class="projects">
   <div class="container">
     <div class="row">
       {% for project in projects %}
       <div class="col-sm-12 col-md-6 col-lg-4">
 
-        <div class="card" style="height:360px;margin-bottom:10px; background-color: black">
+        <div class="card border-dark mt-2">
           <div class="card-body">
-            <!-- <a href="{{project.link}}"> -->
-            <a href="{% url 'projectdetails' id=project.id %}">
               <div class="img-cont">
-                <img class="card-img-top mb-10 img-responsive i-images" src="{{project.image.url}}"
+                <img class="card-img-top img-responsive i-images" src="{{project.image.url}}"
                   style="height:260px;width:100%;">
                 <div>
                   <div class="details" style="text-align: center;">
-                    <div class="text" style="color: white; font-size: 30px; text-transform: capitalize; ">
+                    <div class="text-center font-weight-bold pt-2">
                       {{project.title}}</div>
-                    <a href="{% url 'projectdetails' id=project.id %}" class="btn btn-info">View Project</a><br>
-                    If you like It
+                    <a href="{% url 'projectdetails' id=project.id %}" class="btn btn-outline-info btn-sm mt-2">View Project</a><br>
                   </div>
                 </div>
               </div>
-
-            </a>
-            <br>
-            <p style="font-size:16px;color: blanchedalmond">By : {{project.user | upper}} <span
-                style="float:right;font-size:16px;">{{project.timestamp | date:"D, d-m-Y"}}</span></p>
-            <!-- <a href="{% url 'review' project_id=project.id%}" class="btn btn-info btn-block" style="margin-top:4px;border-radius:20%;">Rate</a> -->
+            <p class="pt-2">By : {{project.user}} <span
+                style="float:right;font-size:15px;">{{project.timestamp | date:"D, d-m-Y"}}</span></p>
           </div>
-          <div class="card-body">
-            <div class="card-text">
-              <!-- <a href="{% url 'review' project_id=project.id%}" class="btn btn-info btn-block">Rate</a> -->
-            </div>
+          <div class="card-text text-center pb-2">
+            <a href="{% url 'review' project_id=project.id%}" class="btn btn-info btn-sm">Rate Project</a>
           </div>
         </div>
 

@@ -4,31 +4,26 @@
 {% load static%}
 {% block content %}
 
-  <div class="panel panel-success text-center">
+  <div class="panel panel-success text-center pt-2">
 
     <div class="panel-body">
       {% if profile_info.photo %}
-      <img src="{{profile_details.photo.url}}" alt="profile-photo" class="img-responsive">
+      <img src="https://images.pexels.com/photos/619419/pexels-photo-619419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="30%" width="30%" alt="profile-photo" class="img-responsive">
       {% else %}
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3AeEIETd1WF-w7g5xkFdUfvcX0FK7tH5gV7qiidS1iW4hJFAzzw"
+        src="https://images.pexels.com/photos/619419/pexels-photo-619419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         style="height:80px;width:80px;">
       {% endif %}
     </div>
     <div class="panel-footer">
-      <h3 style="color: white;">
+      <h3>
         username : {{ profile.username }}
       </h3>
     </div>
     <div class="panel-footer">
-      <h4 style="color: white">
-        Contact : {{ profile_info.contact }}
-      </h4>
-    </div>
-    <div class="panel-footer">
       {% if profile.username == user.username %}
       <p style="font-size:30px;">
-        <a class="btn btn-lg btn-info" href="{% url 'update_profile'%}">Edit Profile</a>
+        <a class="btn btn-sm btn-info" href="{% url 'update_profile'%}">Edit Profile</a>
       </p>
       {%endif%}
     </div>
@@ -38,7 +33,7 @@
       </h4>
     </div>
     <div class="panel-footer">
-      <h5 style="color: white">
+      <h5>
         Joined: {{ profile_info.timestamp | timesince }} ago
       </h5>
     </div>
