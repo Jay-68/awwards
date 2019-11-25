@@ -132,7 +132,7 @@ class Review(models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
     # saving and deleteing the choices
     def save_review(self):

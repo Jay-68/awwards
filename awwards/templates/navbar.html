@@ -1,45 +1,33 @@
 {% load bootstrap4 %}
 {% load static %}
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<header class="header">
-  <nav class="navbar fixed-top" id="navbarr" style="background-color: brown">
-    <div class="container">
-      <div>
-        <a href="{% url 'profile' username=user %}">
-          <ion-icon name="contact" class="ionic"></ion-icon>
-        </a><br>
-        <a href="/logout" style="color: white"></ion-icon>Logout</a>
-
-      </div>
-      <section class="logo-section"><a href="{% url 'index' %}"><img class="logo" src="/static/photos/matuzo.png"
-            style="width:250px;height:60px;" alt=""/></a>
-      <a href="{% url 'index' %}"><img class="logoname" /></a>
-      </section><br><br>
 
 
-      <form class="navbar-form" role="search" action="{% url 'search' %}" style="width:auto">
 
-        <div class="input-group">
-          <div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'index' %}">Awwards</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <input type="text" class="form-control" placeholder="Search Projects by title" name="title"
-              style="height:38px;">
-            <a href="{% url 'add_project'%}" style="color: white"></ion-icon>Upload++</a>
-
-          </div>
-        </div>
-
-      </form>
-      <section class="icons-section">
-
-      </section>
-    </div>
-  </nav>
-</header>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_project'%}">New Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' username=user %}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" role="search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>

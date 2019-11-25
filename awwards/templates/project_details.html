@@ -1,5 +1,5 @@
 {%extends 'base.html'%} {% block content %}
-<style>
+<!-- <style>
   .main-container {
     background: #212121;
     display: flex;
@@ -195,7 +195,7 @@
     position: relative;
     z-index: 100;
   }
-</style>
+</style> -->
 
 <div class="container">
   <div class="row" style="margin-top:120px;">
@@ -275,70 +275,7 @@
   </div>
 
   <br>
-  <div class="row">
-
-
-    {% if reviews %}
-    <div class="col-md-1"></div>
-    <div class="col-md-4">
-      <p class="text-center">DESIGN</p>
-      <!-- {{project.avg_design |floatformat}} -->
-      <div class="main-container">
-        <div class="motion-container">
-          <div class="motion-item circle one"></div>
-          <div class="motion-item circle two"></div>
-          <!-- <div class="motion-item circle three"></div> -->
-          <!-- <div class="motion-item circle four"></div> -->
-          <h style="color:white;">{{project.avg_design |floatformat}}</h>
-          <div class="motion-item circle five"></div>
-          <!-- <div class="motion-item circle six"></div> -->
-          <div class="motion-item circle seven"></div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <p class="text-center">USABILITY</p>
-      <div class="main-container">
-        <div class="motion-container">
-          <div class="motion-item circle one"></div>
-          <div class="motion-item circle two"></div>
-          <!-- <div class="motion-item circle three"></div> -->
-          <div class="motion-item circle four"></div>
-          <h style="color:white;">{{project.avg_usability |floatformat}}</h>
-          <!-- <div class="motion-item circle five"></div> -->
-          <div class="motion-item circle six"></div>
-          <div class="motion-item circle seven"></div>
-
-        </div><!-- End Motion Container -->
-
-      </div>
-    </div>
-
-    <!-- {{project.avg_content |floatformat}} <br> -->
-    <div class="col-md-3">
-      <p class="text-center">CONTENT</p>
-      <div class="main-container">
-        <div class="motion-container">
-          <div class="motion-item circle one"></div>
-          <div class="motion-item circle two"></div>
-          <!-- <div class="motion-item circle three"></div> -->
-          <!-- <div class="motion-item circle four"></div> -->
-          <h style="color:white;"> {{project.avg_content |floatformat}}</h>
-          <!-- <div class="motion-item circle five"></div> -->
-          <!-- <div class="motion-item circle six"></div> -->
-          <div class="motion-item circle seven"></div>
-        </div>
-      </div>
-      {%else%}
-      <h3 style="padding-left:400px;">This project has no ratings</h3>
-      {%endif%}
-    </div>
-    <!-- End Motion Container -->
-    <div class="col-md-1"></div>
-  </div>
+  
   <br>
   <br>
 
