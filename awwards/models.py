@@ -16,7 +16,7 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile', primary_key=True)
     contact = models.CharField(max_length=50, blank=True)
-    timestamp = models.DateTimeField(default=timezone.now())
+    timestamp = models.DateTimeField()
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
